@@ -21,9 +21,21 @@ public class CustomListTest {
     @Test
     public void testHasCity() {
         City city = new City("Edmonton", "Alberta");
-        assertFalse(list.hasCity(city)); // Initially, the city is not in the list
+        assertFalse(list.hasCity(city));
         list.addCity(city);
-        assertTrue(list.hasCity(city));  // After adding, the city should be in the list
+        assertTrue(list.hasCity(city));
     }
+
+    @Test
+    public void testDeleteCity() {
+        City city = new City("Edmonton", "Alberta");
+        list.addCity(city);
+        assertTrue(list.hasCity(city));
+
+        list.deleteCity(city);
+        assertFalse(list.hasCity(city));
+    }
+
+
 
 }
